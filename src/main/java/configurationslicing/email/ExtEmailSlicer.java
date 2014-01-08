@@ -78,7 +78,7 @@ public class ExtEmailSlicer extends	UnorderedStringSlicer<AbstractProject<?, ?>>
 			if (mailer == null) {
 				DescribableList<Publisher,Descriptor<Publisher>> publishers = project.getPublishersList();
 				ExtendedEmailPublisher publisher = new ExtendedEmailPublisher();
-				FailureTrigger trigger = new FailureTrigger();
+				FailureTrigger trigger = new FailureTrigger(false, true, true, true, "", "$PROJECT_DEFAULT_REPLYTO", "$PROJECT_DEFAULT_SUBJECT", "$PROJECT_DEFAULT_CONTENT", "", 0, "project");
 				EmailType email = new EmailType();
 				email.setSendToDevelopers(true);
 				email.setSendToRecipientList(true);

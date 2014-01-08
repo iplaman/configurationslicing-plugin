@@ -120,8 +120,9 @@ public abstract class LogRotationSlicer extends UnorderedStringSlicer<AbstractPr
             LogRotator newlogrotator = new LogRotator(days, builds, artifactDaysToKeep, artifactNumToKeep);
             
             if (!LogRotationSlicer.equals(newlogrotator, logrotator)) {
-	            item.setLogRotator(newlogrotator);
+
 	            try {
+                    item.setLogRotator(newlogrotator);
 	                item.save();
 	            } catch (IOException e) {
 	                e.printStackTrace();
