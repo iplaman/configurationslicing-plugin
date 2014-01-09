@@ -90,12 +90,8 @@ public class TimestamperSlicer extends UnorderedStringSlicer<AbstractProject<?,?
 				}
         	} else if (!isTimestampPresent && isTimestampWanted) {
         		changed = true;
-				try {
-					project.getBuildWrappersList().add(new TimestamperBuildWrapper());
-				} catch (IOException e) {
-					return false;
-				}
-        	} else {
+                project.getBuildWrappersList().add(new TimestamperBuildWrapper());
+            } else {
         		changed = false;
         	}
         	
